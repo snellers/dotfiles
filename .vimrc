@@ -8,14 +8,6 @@ endif
 
 call plug#begin()
 Plug 'tpope/vim-sensible'
-Plug 'preservim/nerdtree'
-Plug 'vim-scripts/The-NERD-tree'
-Plug 'Xuyuanp/nerdtree-git-plugin'
-Plug 'jistr/vim-nerdtree-tabs'
-" Telescope file finder / picker
-Plug 'nvim-lua/popup.nvim'
-Plug 'nvim-lua/plenary.nvim'
-Plug 'nvim-telescope/telescope.nvim'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 call plug#end()
 
@@ -67,6 +59,8 @@ vmap <C-x> "+c
 vmap <C-v> c<ESC>"+p
 imap <C-v> <ESC>"+pa
 
+nnoremap <c-f> :FZF
+
 " disable autoindent when pasting text
 " source:
 " https://coderwall.com/p/if9mda/automatically-set-paste-mode-in-vim-when-pasting-in-insert-mode
@@ -74,34 +68,7 @@ let &t_SI .= "\<Esc>[?2004h"
 let &t_EI .= "\<Esc>[?2004l"
 
 
-" file browser
-let NERDTreeIgnore = ['\.pyc$', '__pycache__']
-let NERDTreeMinimalUI = 1
-let g:nerdtree_open = 0
-map <leader>t :call NERDTreeToggle()<CR>
-function NERDTreeToggle()
-    NERDTreeTabsToggle
-    if g:nerdtree_open == 1
-        let g:nerdtree_open = 0
-    else
-        let g:nerdtree_open = 1
-        wincmd p
-    endif
-endfunction
-let NERDTreeShowHidden=1
-" NERDTree setting defaults to work around http://github.com/scrooloose/nerdtree/issues/489
-let g:NERDTreeDirArrows = 1
-let g:NERDTreeDirArrowExpandable = '▸'
-let g:NERDTreeDirArrowCollapsible = '▾'
-let g:NERDTreeGlyphReadOnly = "RO"
-nnoremap <leader>n :NERDTreeFocus<CR>
-
 " Hightlight on yank
 " From https://neovim.io/news/2021/07
 au TextYankPost * lua vim.highlight.on_yank {higroup="IncSearch", timeout=150, on_visual=true}
 
-" gfiles shortcut
-nnoremap <C-f> <cmd>Telescope find_files<cr>
-nnoremap <C-g> <cmd>Telescope git_files<cr>
-nnoremap <C-d> <cmd>Telescope buffers<cr>
-colorscheme evening
