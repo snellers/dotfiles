@@ -54,10 +54,14 @@ inoremap <A-k> <Esc>:m .-2<CR>==gi
 vnoremap <A-j> :m '>+1<CR>gv=gv
 vnoremap <A-k> :m '<-2<CR>gv=gv
 
-vmap <C-c> "+y
-vmap <C-x> "+c
-vmap <C-v> c<ESC>"+p
-imap <C-v> <ESC>"+pa
+vnoremap <leader>c "+y
+vnoremap <leader>C "+yg_
+nnoremap <leader>c "+y
+
+nnoremap <leader>v "+p
+nnoremap <leader>V "+P
+vnoremap <leader>v "+p
+vnoremap <leader>V "+P
 
 nnoremap <c-f> :FZF
 
