@@ -46,6 +46,7 @@ nnoremap <left> <nop>
 nnoremap <right> <nop>
 highlight Cursor guifg=white guibg=black
 highlight iCursor guifg=white guibg=steelblue
+highlight Visual term=reverse cterm=reverse guibg=Grey
 
 nnoremap <A-j> :m .+1<CR>==
 nnoremap <A-k> :m .-2<CR>==
