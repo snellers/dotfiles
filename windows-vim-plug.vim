@@ -6,3 +6,6 @@ if empty(glob('~/AppData/Local/nvim/autoload/plug.vim'))
     autocmd VimEnter * PlugInstall --sync | source glob('~/AppData/Local/nvim/init.vim')
     let need_to_install_plugins = 1
 endif
+
+source $VIMRUNTIME/mswin.vim
+
