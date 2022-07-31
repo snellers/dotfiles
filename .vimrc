@@ -69,6 +69,10 @@ nnoremap <leader>l <Esc>:bnext<CR>
 
 nnoremap <c-f> :FZF
 
+nnoremap <c-s> <Esc>:w<CR>
+noremap <c-s> <Esc>:w<CR>
+vnoremap <c-s> <Esc>:w<CR>
+
 " disable autoindent when pasting text
 " source:
 " https://coderwall.com/p/if9mda/automatically-set-paste-mode-in-vim-when-pasting-in-insert-mode
