@@ -17,7 +17,7 @@ if need_to_install_plugins == 1
     echo "Done!"
     q
 endif
-
+let mapleader = ","
 set number
 set cursorline
 set cursorcolumn
