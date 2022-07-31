@@ -8,7 +8,10 @@ endif
 
 call plug#begin()
 Plug 'tpope/vim-sensible'
+Plug 'tpope/vim-fugitive'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
 call plug#end()
 
 if need_to_install_plugins == 1
@@ -84,3 +87,9 @@ let &t_EI .= "\<Esc>[?2004l"
 " From https://neovim.io/news/2021/07
 au TextYankPost * lua vim.highlight.on_yank {higroup="IncSearch", timeout=150, on_visual=true}
 
+" airline tuning
+let g:airline#extensions#tabline#enabled = 1 " Enable the list of buffers
+let g:airline_theme='tomorrow'
+let g:airline_powerline_fonts = 1
+let g:airline#extensions#fugitiveline#enabled = 1
+let g:airline#extensions#fzf#enabled = 1
