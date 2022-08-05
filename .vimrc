@@ -67,14 +67,16 @@ nnoremap <leader>V "+P
 vnoremap <leader>v "+p
 vnoremap <leader>V "+P
 
-nnoremap <leader>h <Esc>:bprev<CR>
-nnoremap <leader>l <Esc>:bnext<CR>
+nnoremap <leader>h :bprev<CR>
+nnoremap <leader>l :bnext<CR>
+nnoremap <leader>x :bd<CR>
 
-nnoremap <c-f> :FZF
+nnoremap <c-f> :FZF<CR>
 
-nnoremap <c-s> <Esc>:w<CR>
-noremap <c-s> <Esc>:w<CR>
+nnoremap <c-s> :w<CR>
+noremap <c-s> :w<CR>
 vnoremap <c-s> <Esc>:w<CR>
+inoremap <c-s> <Esc>:w<CR>
 
 " disable autoindent when pasting text
 " source:
