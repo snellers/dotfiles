@@ -9,6 +9,7 @@ endif
 call plug#begin()
 Plug 'tpope/vim-sensible'
 Plug 'tpope/vim-fugitive'
+Plug 'tpope/vim-unimpaired'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
@@ -33,6 +34,7 @@ set incsearch
 set showcmd
 set showmatch
 set nohlsearch
+set smartcase
 nnoremap <c-h> :set hlsearch!<cr>
 set wildmenu
 set wildmode=list:longest
