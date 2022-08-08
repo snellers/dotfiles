@@ -23,8 +23,6 @@ if need_to_install_plugins == 1
 endif
 let mapleader = ","
 set number
-set cursorline
-set cursorcolumn
 set softtabstop=4
 autocmd FileType make setlocal noexpandtab
 autocmd FileType * set tabstop=4|set shiftwidth=4|set expandtab
@@ -34,9 +32,7 @@ set scrolloff=10
 set incsearch
 set showcmd
 set showmatch
-set nohlsearch
 set smartcase
-nnoremap <c-h> :set hlsearch!<cr>
 set wildmenu
 set wildmode=list:longest
 set wildignore=*.docx,*.jpg,*.png,*.gif,*.pdf,*.pyc,*.exe,*.flv,*.img,*.xlsx
