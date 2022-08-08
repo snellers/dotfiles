@@ -70,8 +70,6 @@ nnoremap <leader>V "+P
 vnoremap <leader>v "+p
 vnoremap <leader>V "+P
 
-nnoremap <leader>h :bprev<CR>
-nnoremap <leader>l :bnext<CR>
 nnoremap <leader>x :bd<CR>
 
 nnoremap <c-f> :FZF<CR>
