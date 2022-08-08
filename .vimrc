@@ -78,6 +78,10 @@ inoremap <c-s> <Esc>:w<CR>
 " Allow gf to open non-existent files
 map gf :edit <cfile><CR>
 
+" Reselect visual selection after indenting
+vnoremap < <gv
+vnoremap > >gv
+
 " disable autoindent when pasting text
 " source:
 " https://coderwall.com/p/if9mda/automatically-set-paste-mode-in-vim-when-pasting-in-insert-mode
