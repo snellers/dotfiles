@@ -29,6 +29,7 @@ set softtabstop=4
 autocmd FileType make setlocal noexpandtab
 autocmd FileType * set tabstop=4|set shiftwidth=4|set expandtab
 autocmd FileType python set tabstop=4|set shiftwidth=4|set expandtab
+set hidden
 set scrolloff=10
 set incsearch
 set showcmd
