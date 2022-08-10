@@ -46,6 +46,7 @@ nnoremap <up> <nop>
 nnoremap <down> <nop>
 nnoremap <left> <nop>
 nnoremap <right> <nop>
+color desert 
 highlight Cursor guifg=white guibg=black
 highlight iCursor guifg=white guibg=steelblue
 highlight Visual term=reverse cterm=reverse guibg=Grey
@@ -95,7 +96,7 @@ au TextYankPost * lua vim.highlight.on_yank {higroup="IncSearch", timeout=150, o
 
 " airline tuning
 let g:airline#extensions#tabline#enabled = 1 " Enable the list of buffers
-let g:airline_theme='tomorrow'
+let g:airline_theme='bubblegum'
 let g:airline_powerline_fonts = 1
 let g:airline#extensions#fugitiveline#enabled = 1
 let g:airline#extensions#fzf#enabled = 1
