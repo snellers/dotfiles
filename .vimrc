@@ -30,6 +30,7 @@ autocmd FileType python set tabstop=4|set shiftwidth=4|set expandtab
 set hidden
 set scrolloff=10
 set incsearch
+set hlsearch
 set showcmd
 set showmatch
 set smartcase
@@ -50,6 +51,7 @@ color desert
 highlight Cursor guifg=white guibg=black
 highlight iCursor guifg=white guibg=steelblue
 highlight Visual term=reverse cterm=reverse guibg=Grey
+highlight Search term=reverse cterm=reverse guibg=Grey
 
 nnoremap <A-j> :m .+1<CR>==
 nnoremap <A-k> :m .-2<CR>==
