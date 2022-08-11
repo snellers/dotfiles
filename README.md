@@ -1,4 +1,4 @@
-Some config settings for neovim.
+Some config settings for neovim, tmux and other tools.
 
 Requires unstable branch of neovim:
 
