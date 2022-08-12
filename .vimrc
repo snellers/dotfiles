@@ -13,6 +13,7 @@ Plug 'tpope/vim-unimpaired'
 Plug 'tpope/vim-commentary'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
+Plug 'stsewd/fzf-checkout.vim'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'dracula/vim', {'as':'dracula'}
@@ -80,7 +81,11 @@ nnoremap <leader>x :bd<CR>
 command! -bang -nargs=? -complete=dir Files
     \ call fzf#run(fzf#wrap('files', fzf#vim#with_preview({ 'dir': <q-args>, 'sink': 'e', 'source': 'rg --files --hidden' }), <bang>0))
 
-nnoremap <leader> :Files<CR>
+nmap <leader> :Files<CR>
+nmap <leader>b :Buffers<CR>
+nmap <leader>h :History<CR>
+nmap <leader>r :Rg<space>
+nmap <leader>gb :GBranches<CR>
 
 nnoremap <c-s> :w<CR>
 noremap <c-s> :w<CR>
