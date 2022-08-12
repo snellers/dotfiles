@@ -13,6 +13,7 @@ Plug 'tpope/vim-unimpaired'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
+Plug 'dracula/vim', {'as':'dracula'}
 call plug#end()
 
 if need_to_install_plugins == 1
@@ -47,7 +48,7 @@ nnoremap <up> <nop>
 nnoremap <down> <nop>
 nnoremap <left> <nop>
 nnoremap <right> <nop>
-color desert 
+color dracula
 highlight Cursor guifg=white guibg=black
 highlight iCursor guifg=white guibg=steelblue
 highlight Visual term=reverse cterm=reverse guibg=Grey
