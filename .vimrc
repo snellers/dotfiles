@@ -81,7 +81,7 @@ nnoremap <leader>x :bd<CR>
 command! -bang -nargs=? -complete=dir Files
     \ call fzf#run(fzf#wrap('files', fzf#vim#with_preview({ 'dir': <q-args>, 'sink': 'e', 'source': 'rg --files --hidden' }), <bang>0))
 
-nmap <leader> :Files<CR>
+nmap <leader>f :Files<CR>
 nmap <leader>b :Buffers<CR>
 nmap <leader>h :History<CR>
 nmap <leader>r :Rg<space>
