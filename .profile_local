@@ -1,0 +1,4 @@
+
+alias v="ls -l"
+alias gd='git diff --cached'
+export EDITOR=nvim
