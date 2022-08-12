@@ -12,6 +12,7 @@ Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-unimpaired'
 Plug 'tpope/vim-commentary'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+Plug 'junegunn/fzf.vim'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'dracula/vim', {'as':'dracula'}
@@ -23,7 +24,7 @@ if need_to_install_plugins == 1
     echo "Done!"
     q
 endif
-let mapleader = ","
+let mapleader = " " 
 set number
 set softtabstop=4
 autocmd FileType make setlocal noexpandtab
@@ -76,7 +77,10 @@ vnoremap <leader>V "+P
 
 nnoremap <leader>x :bd<CR>
 
-nnoremap <c-f> :FZF<CR>
+command! -bang -nargs=? -complete=dir Files
+    \ call fzf#run(fzf#wrap('files', fzf#vim#with_preview({ 'dir': <q-args>, 'sink': 'e', 'source': 'rg --files --hidden' }), <bang>0))
+
+nnoremap <leader> :Files<CR>
 
 nnoremap <c-s> :w<CR>
 noremap <c-s> :w<CR>
