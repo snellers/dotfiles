@@ -29,15 +29,18 @@ autocmd FileType make setlocal noexpandtab
 autocmd FileType * set tabstop=4|set shiftwidth=4|set expandtab
 autocmd FileType python set tabstop=4|set shiftwidth=4|set expandtab
 set hidden
-set scrolloff=10
-set incsearch
+set nowrap
+set scrolloff=8
+set sidescroll=8
+set sidescrolloff=8
 set hlsearch
 set showcmd
 set showmatch
 set smartcase
-set wildmenu
 set wildmode=list:longest
 set wildignore=*.docx,*.jpg,*.png,*.gif,*.pdf,*.pyc,*.exe,*.flv,*.img,*.xlsx
+set list
+set listchars=tab:▸\ ,trail:·
 inoremap jj <esc>
 nnoremap <space> :
 nnoremap o o<esc>
