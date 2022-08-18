@@ -12,6 +12,9 @@ Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-unimpaired'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-surround'
+Plug 'tpope/vim-endwise'
+Plug 'tpope/vim-eunuch'
+Plug 'tpope/vim-sleuth'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 Plug 'stsewd/fzf-checkout.vim'
@@ -29,9 +32,6 @@ endif
 let mapleader = " " 
 set number
 set softtabstop=4
-autocmd FileType make setlocal noexpandtab
-autocmd FileType * set tabstop=4|set shiftwidth=4|set expandtab
-autocmd FileType python set tabstop=4|set shiftwidth=4|set expandtab
 set hidden
 set nowrap
 set scrolloff=8
