@@ -21,6 +21,7 @@ Plug 'stsewd/fzf-checkout.vim'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'dracula/vim', {'as':'dracula'}
+Plug 'sakhnik/nvim-gdb', { 'do': ':!./install.sh' }
 call plug#end()
 
 if need_to_install_plugins == 1
