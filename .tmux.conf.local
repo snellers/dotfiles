@@ -411,6 +411,7 @@ set -g @dracula-show-powerline true
 set -g @dracula-cpu-display-load true
 set -g @dracula-military-time true
 run '~/.tmux/plugins/tpm/tpm'
+setw -g mode-keys vi
 
 
 # -- custom variables ----------------------------------------------------------
