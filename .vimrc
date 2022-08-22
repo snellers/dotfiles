@@ -1,7 +1,7 @@
 let need_to_install_plugins = 0
 if empty(glob('~/.vim/autoload/plug.vim'))
     silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
-      \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+                \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
     autocmd VimEnter * PlugInstall --sync | source ~/.vimrc
     let need_to_install_plugins = 1
 endif
@@ -81,7 +81,7 @@ vnoremap <leader>V "+P
 nnoremap <leader>x :bd<CR>
 
 command! -bang -nargs=? -complete=dir Files
-    \ call fzf#run(fzf#wrap('files', fzf#vim#with_preview({ 'dir': <q-args>, 'sink': 'e', 'options': '--multi --reverse', 'source': 'rg --files --iglob "!*.o" --iglob "!target/"' }), <bang>0))
+            \ call fzf#run(fzf#wrap('files', fzf#vim#with_preview({ 'dir': <q-args>, 'sink': 'e', 'options': '--multi --reverse', 'source': 'rg --files --iglob "!*.o" --iglob "!target/"' }), <bang>0))
 
 nmap <leader>f :Files<CR>
 nmap <leader>b :Buffers<CR>
@@ -118,6 +118,17 @@ let g:airline_theme='bubblegum'
 let g:airline_powerline_fonts = 1
 let g:airline#extensions#fugitiveline#enabled = 1
 let g:airline#extensions#fzf#enabled = 1
+let g:nvimgdb_config_override = {
+            \  'key_until'           : '<f4>',
+            \  'key_continue'        : '<f8>',
+            \  'key_next'            : '<f6>',
+            \  'key_step'            : '<f5>',
+            \  'key_finish'          : '<f7>',
+            \  'key_breakpoint'      : '<f3>',
+            \  'key_frameup'         : '<c-p>',
+            \  'key_framedown'       : '<c-n>',
+            \  'key_eval'            : '<f9>',
+            \ }
 
 let $LOCALFILE=expand("~/.vimrc.local")
 if filereadable($LOCALFILE)
