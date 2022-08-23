@@ -46,6 +46,7 @@ set wildmode=list:longest
 set wildignore=*.docx,*.jpg,*.png,*.gif,*.pdf,*.pyc,*.exe,*.flv,*.img,*.xlsx
 set list
 set listchars=tab:▸\ ,trail:·
+autocmd FileType sql set tabstop=4|set shiftwidth=4|set expandtab
 inoremap jj <esc>
 nnoremap <space> :
 nnoremap o o<esc>
@@ -129,6 +130,11 @@ let g:nvimgdb_config_override = {
             \  'key_framedown'       : '<c-n>',
             \  'key_eval'            : '<f9>',
             \ }
+
+let plsql_fold = 1
+au BufNewFile,BufRead *.sql,*.pls,*.tps,*.tpb,*.pks,*.pkb,*.pkg,*.trg set filetype=plsql
+au BufNewFile,BufRead *.sql,*.pls,*.tps,*.tpb,*.pks,*.pkb,*.pkg,*.trg syntax on
+au Syntax plsql normal zR
 
 let $LOCALFILE=expand("~/.vimrc.local")
 if filereadable($LOCALFILE)
