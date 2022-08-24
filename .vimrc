@@ -80,6 +80,7 @@ vnoremap <leader>v "+p
 vnoremap <leader>V "+P
 
 nnoremap <leader>x :bd<CR>
+nnoremap <leader>e :Lexplore<CR>
 
 command! -bang -nargs=? -complete=dir Files
             \ call fzf#run(fzf#wrap('files', fzf#vim#with_preview({ 'dir': <q-args>, 'sink': 'e', 'options': '--multi --reverse', 'source': 'rg --files --iglob "!*.o" --iglob "!target/"' }), <bang>0))
