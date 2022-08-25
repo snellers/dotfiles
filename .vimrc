@@ -22,6 +22,8 @@ Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'dracula/vim', {'as':'dracula'}
 Plug 'sakhnik/nvim-gdb', { 'do': ':!./install.sh' }
+Plug 'kyazdani42/nvim-web-devicons'
+Plug 'kyazdani42/nvim-tree.lua'
 call plug#end()
 
 if need_to_install_plugins == 1
@@ -80,7 +82,7 @@ vnoremap <leader>v "+p
 vnoremap <leader>V "+P
 
 nnoremap <leader>x :bd<CR>
-nnoremap <leader>e :Lexplore<CR>
+nnoremap <leader>e :NvimTreeToggle<CR>
 
 command! -bang -nargs=? -complete=dir Files
             \ call fzf#run(fzf#wrap('files', fzf#vim#with_preview({ 'dir': <q-args>, 'sink': 'e', 'options': '--multi --reverse', 'source': 'rg --files --iglob "!*.o" --iglob "!target/"' }), <bang>0))
@@ -136,6 +138,10 @@ let plsql_fold = 1
 au BufNewFile,BufRead *.sql,*.pls,*.tps,*.tpb,*.pks,*.pkb,*.pkg,*.trg set filetype=plsql
 au BufNewFile,BufRead *.sql,*.pls,*.tps,*.tpb,*.pks,*.pkb,*.pkg,*.trg syntax on
 au Syntax plsql normal zR
+
+lua << EOF
+require('nvim-tree').setup()
+EOF
 
 let $LOCALFILE=expand("~/.vimrc.local")
 if filereadable($LOCALFILE)
