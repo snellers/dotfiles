@@ -77,6 +77,13 @@ use({
     require('user.plugins.nvimgdb')
   end,
 })
+
+use({
+  'neovim/nvim-lspconfig',
+  config = function()
+    require('user.plugins.nvim-lspconfig')
+  end
+})
 -- Automatically install plugins on first run
 if is_bootstrap then
   require('packer').sync()
