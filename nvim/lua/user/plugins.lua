@@ -84,6 +84,38 @@ use({
     require('user.plugins.nvim-lspconfig')
   end
 })
+
+use({
+  'tpope/vim-dadbod',
+  cmd = {'DB', 'DBUI', 'DBUIToggle'}
+})
+
+use({
+  'kristijanhusak/vim-dadbod-ui',
+  after = 'vim-dadbod',
+  cmd = {'DBUI', 'DBUIToggle'},
+  config = function()
+    require('user.plugins.dadbod-ui')
+  end
+})
+
+use({
+  'hrsh7th/nvim-cmp',
+  requires = {
+    'neovim/nvim-lspconfig',
+    'hrsh7th/cmp-nvim-lsp',
+    'hrsh7th/cmp-nvim-lsp-signature-help',
+    'hrsh7th/cmp-buffer',
+    'hrsh7th/cmp-path',
+    'hrsh7th/cmp-cmdline',
+    'hrsh7th/cmp-nvim-lua',
+    {'kristijanhusak/vim-dadbod-completion', ft = {'sql'}},
+  },
+  config = function()
+    require('user.plugins.cmp')
+  end,
+})
+
 -- Automatically install plugins on first run
 if is_bootstrap then
   require('packer').sync()
