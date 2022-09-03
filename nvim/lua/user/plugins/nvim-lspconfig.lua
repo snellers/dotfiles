@@ -2,7 +2,7 @@ local keymap = require('user.lib.keys').keymap
 local nvim_lsp = require('lspconfig')
 local servers = { 'clangd' }
 local opts = { noremap = true, silent = true }
-keymap('n', '<space>e', vim.diagnostic.open_float, opts)
+keymap('n', '<space>E', vim.diagnostic.open_float, opts)
 keymap('n', '[d', vim.diagnostic.goto_prev, opts)
 keymap('n', ']d', vim.diagnostic.goto_next, opts)
 keymap('n', '<space>q', vim.diagnostic.setloclist, opts)
@@ -25,7 +25,9 @@ local on_attach = function(client, bufnr)
   keymap('n', '<space>rn', vim.lsp.buf.rename, bufopts)
   keymap('n', '<space>ca', vim.lsp.buf.code_action, bufopts)
   keymap('n', 'gr', vim.lsp.buf.references, bufopts)
-  keymap('n', '<space>f', vim.lsp.buf.formatting, bufopts)
+  keymap('n', '<space>F', function()
+    vim.lsp.buf.format({ async = true })
+  end, bufopts)
 
 end
 
