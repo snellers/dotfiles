@@ -109,6 +109,7 @@ use({
     'hrsh7th/cmp-path',
     'hrsh7th/cmp-cmdline',
     'hrsh7th/cmp-nvim-lua',
+    'onsails/lspkind-nvim',
     {'kristijanhusak/vim-dadbod-completion', ft = {'sql'}},
   },
   config = function()

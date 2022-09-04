@@ -1,10 +1,21 @@
 local cmp = require('cmp')
+local lspkind = require('lspkind')
 
 vim.o.completeopt = 'menuone,longest,preview'
 
 cmp.setup({
   experimental = {
     ghost_text = true,
+  },
+  formatting = {
+    format = lspkind.cmp_format({
+      with_text = true,
+      menu = {
+        nvim_lsp = 'LSP',
+        nvim_lua = 'Lua',
+        buffer = 'Buf',
+      }
+    })
   },
   mapping = {
     ['<C-p>'] = cmp.mapping.select_prev_item(),
