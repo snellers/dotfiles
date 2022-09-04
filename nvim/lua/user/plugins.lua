@@ -116,6 +116,13 @@ use({
   end,
 })
 
+use({
+  'numToStr/Comment.nvim',
+  config = function()
+    require('Comment').setup()
+  end
+})
+
 -- Automatically install plugins on first run
 if is_bootstrap then
   require('packer').sync()
