@@ -402,13 +402,16 @@ tmux_conf_uninstall_plugins_on_reload=true
 set -g @plugin 'tmux-plugins/tpm'
 set -g @plugin 'tmux-plugins/tmux-sensible'
 set -g @plugin 'dracula/tmux'
+set -g @plugin 'tmux-plugins/tmux-yank'
 set -g @dracula-plugins "cpu-usage gpu-usage ram-usage network time"
 set -g @dracula-show-powerline true
 set -g @dracula-cpu-display-load true
 set -g @dracula-military-time true
 run '~/.tmux/plugins/tpm/tpm'
 setw -g mode-keys vi
-
+bind-key -T copy-mode-vi v send-keys -X begin-selection
+bind-key -T copy-mode-vi C-v send-keys -X rectangle-toggle
+bind-key -T copy-mode-vi y send-keys -X copy-selection-and-cancel
 
 # -- custom variables ----------------------------------------------------------
 
