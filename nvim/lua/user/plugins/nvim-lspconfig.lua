@@ -1,6 +1,10 @@
 local keymap = require('user.lib.keys').keymap
 local nvim_lsp = require('lspconfig')
-local servers = { 'clangd' }
+local servers = {
+  'clangd',
+  'pyright',
+  'tsserver'
+}
 local opts = { noremap = true, silent = true }
 keymap('n', '<space>E', vim.diagnostic.open_float, opts)
 keymap('n', '[d', vim.diagnostic.goto_prev, opts)
