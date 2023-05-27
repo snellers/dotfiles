@@ -37,7 +37,6 @@ cmp.setup({
     { name = 'path' },
     { name = 'buffer', keyword_length = 3 },
     { name = 'cmdline' },
-    { name = 'vim-dadbod-completion' },
   }
 })
 
