@@ -78,6 +78,14 @@ use({
   end,
 })
 
+
+use({
+  'L3MON4D3/LuaSnip',
+  config = function()
+    require('user.plugins.luasnip')
+  end,
+})
+
 use({
   'neovim/nvim-lspconfig',
   config = function()
@@ -88,6 +96,7 @@ use({
 use({
   'hrsh7th/nvim-cmp',
   requires = {
+    'L3MON4D3/LuaSnip',
     'neovim/nvim-lspconfig',
     'hrsh7th/cmp-nvim-lsp',
     'hrsh7th/cmp-nvim-lsp-signature-help',
@@ -96,6 +105,7 @@ use({
     'hrsh7th/cmp-cmdline',
     'hrsh7th/cmp-nvim-lua',
     'onsails/lspkind-nvim',
+    'saadparwaiz1/cmp_luasnip',
   },
   config = function()
     require('user.plugins.cmp')

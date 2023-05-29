@@ -7,6 +7,11 @@ cmp.setup({
   experimental = {
     ghost_text = true,
   },
+  snippet = {
+    expand = function(args)
+      require('luasnip').lsp_expand(args.body)
+    end,
+  },
   formatting = {
     format = lspkind.cmp_format({
       with_text = true,
@@ -33,10 +38,11 @@ cmp.setup({
   sources = {
     { name = 'nvim_lsp' },
     { name = 'nvim_lsp_signature_help' },
-    { name = 'nvim_lua' },
     { name = 'path' },
     { name = 'buffer', keyword_length = 3 },
     { name = 'cmdline' },
+    { name = 'nvim_lua' },
+    { name = 'luasnip' }
   }
 })
 

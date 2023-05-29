@@ -1,12 +1,13 @@
 local keymap = require('user.lib.keys').keymap
 local nvim_lsp = require('lspconfig')
+
 local servers = {
   'clangd',
   'pyright',
   'tsserver'
 }
 local opts = { noremap = true, silent = true }
-keymap('n', '<leader>E', vim.diagnostic.open_float, opts)
+keymap('n', 'gl', vim.diagnostic.open_float, opts)
 keymap('n', '[d', vim.diagnostic.goto_prev, opts)
 keymap('n', ']d', vim.diagnostic.goto_next, opts)
 keymap('n', '<leader>q', vim.diagnostic.setloclist, opts)
@@ -26,7 +27,7 @@ local on_attach = function(client, bufnr)
     print(vim.inspect(vim.lsp.buf.list_workspace_folders()))
   end, bufopts)
   keymap('n', '<leader>D', vim.lsp.buf.type_definition, bufopts)
-  keymap('n', '<leader>rn', vim.lsp.buf.rename, bufopts)
+  keymap('n', '<F2>', vim.lsp.buf.rename, bufopts)
   keymap('n', '<leader>ca', vim.lsp.buf.code_action, bufopts)
   keymap('n', 'gr', vim.lsp.buf.references, bufopts)
   keymap('n', '<leader>t', function()
@@ -35,9 +36,12 @@ local on_attach = function(client, bufnr)
 
 end
 
+local capabilities = require('cmp_nvim_lsp').default_capabilities()
+
 for _, lsp in ipairs(servers) do
-  nvim_lsp[lsp].setup {
-    on_attach = on_attach
-  }
+  nvim_lsp[lsp].setup({
+    on_attach = on_attach,
+    capabilities = capabilities
+  })
 end
 
