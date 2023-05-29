@@ -19,6 +19,9 @@ cmp.setup({
         nvim_lsp = 'LSP',
         nvim_lua = 'Lua',
         buffer = 'Buf',
+        path = 'Pat',
+        luasnip = 'Sni',
+        nvim_lsp_signature_help = 'NLS',
       }
     })
   },
@@ -54,9 +57,8 @@ cmp.setup({
     { name = 'nvim_lsp_signature_help' },
     { name = 'path' },
     { name = 'buffer' },
-    { name = 'cmdline' },
     { name = 'nvim_lua' },
-    { name = 'luasnip' }
+    { name = 'luasnip' },
   }
 })
 
