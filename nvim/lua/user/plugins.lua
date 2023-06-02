@@ -52,6 +52,18 @@ use({
 })
 
 use({
+  'nvim-treesitter/nvim-treesitter',
+  run = ':TSUpdate',
+  requires = {
+    'nvim-treesitter/nvim-treesitter-textobjects'
+  },
+  config = function()
+    require('user.plugins.treesitter')
+  end,
+})
+
+
+use({
   'nvim-telescope/telescope.nvim',
   requires = {
     { 'nvim-lua/plenary.nvim' },
