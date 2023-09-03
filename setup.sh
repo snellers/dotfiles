@@ -4,7 +4,11 @@ set -euo pipefail
 cd
 echo "Installing some packages"
 sudo add-apt-repository ppa:neovim-ppa/neovim -y
-sudo apt install tmux powerline kitty neovim python3-dev python3-pip gparted
+sudo apt install \
+    rlwrap ripgrep tmux \
+    powerline kitty neovim \
+    python3-dev python3-pip gparted \
+    cryptsetup lvm2
 sudo update-alternatives --install /usr/bin/vim vim /usr/bin/nvim 60
 sudo update-alternatives --config vim
 sudo update-alternatives --install /usr/bin/vi vi /usr/bin/nvim 60
