@@ -3,5 +3,5 @@ alias v="ls -l"
 alias gd='git diff --cached'
 alias ressh='eval `ssh-agent` ssh-add ~/.ssh/id_rsa'
 alias cryptclose='sudo vgchange -an vgext0 && sudo cryptsetup luksClose /dev/mapper/luks*'
-alias rsyncit="rsnell -lr --delete --del "
+alias rsyncit="rsync -lr --delete --del "
 export EDITOR=nvim
