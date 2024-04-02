@@ -1,4 +1,5 @@
 -- vim-sensible provides several other common options
+vim.opt.fixendofline = false
 vim.opt.number = true
 vim.opt.softtabstop = 4
 vim.opt.expandtab = true
