@@ -40,5 +40,4 @@ keymap('n', '<C-Right>', ':vertical resize +2<CR>')
 -- http://ddrscott.github.io/blog/2016/yank-without-jank/
 keymap('v', 'y', 'myy`y')
 keymap('v', 'Y', 'myY`y')
-keymap('', '<leader>p', ':!p4 edit %<CR>')
 
