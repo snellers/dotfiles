@@ -125,6 +125,10 @@ use({
 })
 
 use({
+  'mfussenegger/nvim-jdtls'
+})
+
+use({
   'numToStr/Comment.nvim',
   config = function()
     require('Comment').setup()
