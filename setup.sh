@@ -5,7 +5,7 @@ cd
 echo "Installing some packages"
 sudo add-apt-repository ppa:neovim-ppa/neovim -y
 sudo apt install \
-    rlwrap ripgrep tmux xclip \
+    rlwrap ripgrep tmux xsel \
     powerline kitty neovim \
     python3-dev python3-pip gparted \
     cryptsetup lvm2
