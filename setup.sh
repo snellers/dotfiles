@@ -16,7 +16,13 @@ sudo update-alternatives --config vi
 sudo update-alternatives --install /usr/bin/editor editor /usr/bin/nvim 60
 sudo update-alternatives --config editor
 
+mkdir -p git
+pushd git
+git clone https://github.com/gpakosz/.tmux
+popd
+
 echo "Setting up shell customizations"
+ln -sf ~/git/.tmux/.tmux.conf
 ln -sf ~/git/dotfiles/.tmux.conf.local
 ln -sf ~/git/dotfiles/.profile.local
 echo ". ~/.profile.local" >> .profile
