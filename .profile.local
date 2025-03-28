@@ -6,4 +6,5 @@ alias cryptclose='sudo vgchange -an vgext0 && sudo cryptsetup luksClose /dev/map
 alias rsyncit="rsync -lruv --del "
 export EDITOR=nvim
 export ASAN_OPTIONS=detect_stack_use_after_return=true
+export GPG_TTY=$(tty)
 
