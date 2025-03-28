@@ -3,7 +3,7 @@
 set -euo pipefail
 cd
 echo "Installing some packages"
-sudo add-apt-repository ppa:neovim-ppa/neovim -y
+sudo add-apt-repository ppa:neovim-ppa/unstable -y
 sudo apt install \
     rlwrap ripgrep tmux xsel \
     powerline kitty neovim \
@@ -22,6 +22,7 @@ ln -sf ~/git/dotfiles/.profile.local
 echo ". ~/.profile.local" >> .profile
 ln -sf ~/git/dotfiles/.bashrc.local
 echo ". ~/.bashrc.local" >> .bashrc
+mkdir -p .config
 cd .config
 if [ -d nvim ]; then
     mv -f nvim nvim.old
