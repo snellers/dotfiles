@@ -4,7 +4,7 @@ local nvim_lsp = require('lspconfig')
 local servers = {
   'clangd',
   'pyright',
-  'tsserver'
+  'ts_ls'
 }
 local opts = { noremap = true, silent = true }
 keymap('n', 'gl', vim.diagnostic.open_float, opts)
