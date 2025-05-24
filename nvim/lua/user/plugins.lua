@@ -149,6 +149,40 @@ use({
   end,
 })
 
+use({
+  "echasnovski/mini.diff",
+  config = function()
+    local diff = require("mini.diff")
+    diff.setup({
+      -- Disabled by default
+      source = diff.gen_source.none(),
+    })
+  end,
+})
+
+use({
+    'MeanderingProgrammer/render-markdown.nvim',
+    after = { 'nvim-treesitter' },
+    requires = { 'echasnovski/mini.nvim', opt = true }, -- if you use the mini.nvim suite
+    config = function()
+        require('render-markdown').setup({
+      file_types = {'markdown', 'codecompanion'},
+    })
+    end,
+})
+
+use({
+  'olimorris/codecompanion.nvim',
+  config = function()
+    require('user.plugins.codecompanion')
+  end,
+  requires = {
+    'nvim-lua/plenary.nvim',
+    'nvim-treesitter/nvim-treesitter'
+  }
+})
+
+
 -- Automatically install plugins on first run
 if is_bootstrap then
   require('packer').sync()
