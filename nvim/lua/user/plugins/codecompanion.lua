@@ -17,6 +17,9 @@ require("codecompanion").setup({
     inline = {
       adapter = 'ollama'
     },
+    agent = {
+      adapter = 'ollama'
+    }
   }
 })
 
